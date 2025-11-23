@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>index</title>
+  <style>
+    body {
+      background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+      overflow: hidden;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Courgette', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #b3005e;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      max-width: 80%;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    h2:nth-of-type(1) { animation-delay: 0.5s; }
+    h2:nth-of-type(2) { animation-delay: 2.5s; }
+    h2:nth-of-type(3) { animation-delay: 4.5s; }
+    h2:nth-of-type(4) { animation-delay: 6.5s; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #b3005e;
+  padding: 14px 35px;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  font-family: 'Courgette', cursive;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.3);
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeIn 2s ease-in-out forwards;
+  animation-delay: 7s;
+}
+
+button:hover {
+  background: #ff898d;
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(255, 77, 136, 0.45);
+}
+
+
+    .heart, .flower {
+      position: absolute;
+      top: -50px;
+      animation: fall linear forwards;
+      font-size: 1.5rem;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Dear Achuuu</h2>
+  <h2>With every bit you grow, I see new reasons to love you all over again✨</h2>
+  <h2>Every moment with you feels gentle… like I’m safe in my own world💫</h2>
+  <h2>And in the quietest corners of my mind… it’s still you. Always you❤️‍🔥</h2>
+  <button onclick="window.location.href='surprise.html'">Touch here 💝</button>
+
+  <script>
+    const emojis = ['💖','🌸','💗','🌷','💞','🌹'];
+    function createFallingEmoji() {
+      const emoji = document.createElement('div');
+      emoji.classList.add(Math.random() > 0.5 ? 'heart' : 'flower');
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + 'vw';
+      emoji.style.animationDuration = Math.random() * 3 + 3 + 's';
+      emoji.style.fontSize = Math.random() * 20 + 20 + 'px';
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+    setInterval(createFallingEmoji, 200);
+  </script>
+</body>
+</html>

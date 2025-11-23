@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>love</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      color: #b3005e;
+      text-align: center;
+      position: relative;
+    }
+
+    h1, p {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-family: 'Courgette', cursive;
+      margin-bottom: 20px;
+      animation-delay: 0.5s;
+    }
+
+    p {
+      font-size: 1.3rem;
+      font-family: 'Courgette', cursive;
+      max-width: 80%;
+      line-height: 1.6;
+      animation-delay: 2.5s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .heart {
+      position: absolute;
+      bottom: -10px;
+      font-size: 1.5rem;
+      animation: rise linear forwards;
+      opacity: 0.9;
+    }
+
+    @keyframes rise {
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .glow-heart {
+  display: inline-block;
+  font-size: 3rem;
+  animation: pulse 2s infinite;
+  opacity: 0;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  margin-left: 8px; /* small spacing to look cute */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+  </style>
+</head>
+<body>
+  <h1>Happy Birthday, My Love <span class="glow-heart">💖</span></h1>
+  <p>
+Every smile of yours lights up my world, And the effort you put in, not just for yourself, but for both of us, is something I notice, something I admire, and something I’m endlessly proud of.  
+Your hard work, your patience, your strength… <br>It all makes our love feel safer,  
+steadier, and more beautiful with every passing day✨  
+<br>I’m grateful that the universe brought me 🫵 - my reason, my calm, my love, my everything💫  
+<br><br>
+Once again…Happy Birthday to the most amazing boyfriend in the entire world🥰😚🤗
+</p>
+  
+
+  <script>
+    const emojis = ['✨', '💖', '🌸', '💞', '🌷', '💓'];
+    function createSparkle() {
+      const el = document.createElement('div');
+      el.classList.add('heart');
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.animationDuration = Math.random() * 4 + 4 + 's';
+      el.style.fontSize = Math.random() * 20 + 20 + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 6000);
+    }
+
+    setInterval(createSparkle, 200);
+  </script>
+</body>
+</html>
