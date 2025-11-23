@@ -6,7 +6,7 @@
   <title>index</title>
   <style>
     body {
-      background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+      background: linear-gradient(120deg,#ff9a9e,#fad0c4);
       overflow: hidden;
       height: 100vh;
       margin: 0;
@@ -18,12 +18,13 @@
       text-align: center;
       color: #b3005e;
       position: relative;
+      padding: 0 10px;
     }
 
     h2 {
       font-size: 1.8rem;
-      max-width: 80%;
-      line-height: 1.5;
+      max-width: 90%;
+      line-height: 1.4;
       opacity: 0;
       transform: translateY(30px);
       animation: fadeIn 2s ease-in-out forwards;
@@ -40,30 +41,29 @@
     }
 
     button {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  color: #b3005e;
-  padding: 14px 35px;
-  margin-top: 40px;
-  font-size: 1.2rem;
-  font-family: 'Courgette', cursive;
-  border-radius: 40px;
-  cursor: pointer;
-  font-weight: 600;
-  box-shadow: 0 8px 20px rgba(255, 77, 136, 0.3);
-  transition: all 0.4s ease;
-  opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-  animation-delay: 7s;
-}
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      color: #b3005e;
+      padding: 14px 35px;
+      margin-top: 40px;
+      font-size: 1.2rem;
+      font-family: 'Courgette', cursive;
+      border-radius: 40px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(255, 77, 136, 0.3);
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards;
+      animation-delay: 7s;
+    }
 
-button:hover {
-  background: #ff898d;
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(255, 77, 136, 0.45);
-}
-
+    button:hover {
+      background: #ff898d;
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(255, 77, 136, 0.45);
+    }
 
     .heart, .flower {
       position: absolute;
@@ -80,17 +80,38 @@ button:hover {
         opacity: 0;
       }
     }
+
+    /* ---------- MOBILE FIXES ---------- */
+    @media (max-width: 480px) {
+
+      h2 {
+        font-size: 1.3rem !important;
+        line-height: 1.3 !important;
+      }
+
+      button {
+        font-size: 1rem !important;
+        padding: 10px 22px !important;
+        margin-top: 25px !important;
+      }
+
+      .heart, .flower {
+        font-size: 1rem !important;
+      }
+    }
   </style>
 </head>
 <body>
+
   <h2>Dear Achuuu</h2>
   <h2>With every bit you grow, I see new reasons to love you all over again✨</h2>
   <h2>Every moment with you feels gentle… like I’m safe in my own world💫</h2>
-  <h2>And in the quietest corners of my mind… it’s still you. Always you❤️‍🔥</h2>
-  <button onclick="window.location.href='surprise.html'">Touch here 💝</button>
+  <h2>And in the quietest corners of my mind… it’s still you. Always you✨</h2>
+
+  <button onclick="window.location.href='surprise.html'">Touch here💝</button>
 
   <script>
-    const emojis = ['💖','🌸','💗','🌷','💞','🌹'];
+    const emojis = ['💖','❤️‍🔥','💗','💘','💞','💓'];
     function createFallingEmoji() {
       const emoji = document.createElement('div');
       emoji.classList.add(Math.random() > 0.5 ? 'heart' : 'flower');
